@@ -45,19 +45,35 @@
     justify-content: center;
 }
 
-table {
-    border: 2px solid;
-    border-color: black;
-}
-
-.product_picture {
-    width: 150px;
-    /*height: 100px;*/
-}
-
 .wideButton {
     width: 200px;
     height: 40px;
     font-size: 20px;
     background-color: aqua;
+}
+
+.header-cell {
+    width: 150px;
+    font-size: 26px;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: black 1px solid;
+}
+.cell {
+    width: 150px;
+    font-size: 26px;
+    background-color: white;
+    color: blue;
+    padding: 10px;
+    border: black 1px solid;
+}
+.clickable {
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border: black 1px solid;
 }

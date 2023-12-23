@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
+import DateCells from "./components/DateCells";
 import NewDateButton from "./components/NewDateButton";
 import NewStudentButton from "./components/NewStudentButton";
+import StudentCells from "./components/StudentCells";
 
 const INITIAL_STUDENT_NAMES = ["Samuel", "Noah", "Daniel"];
 const INITIAL_DATES = ["2023-12-09", "2023-12-16", "2023-12-23"];
@@ -26,15 +28,24 @@ export default function App() {
     <hr />
 
     <div className="content">
+      <h2>Attendance chart</h2>
+
+      <div>
+        <DateCells dates={dates} />
+        <StudentCells studentNames={studentNames} dateLength={dates.length} />
+      </div>
+
+      {/*TODO: change to save*/}
       <button onClick={() => {
-        console.log("INITIAL_DATES", dates)
-        console.log("INITIAL_STUDENT_NAMES", studentNames)
-      }}>Logs
+        console.log("dates", dates)
+        console.log("studentNames", studentNames)
+      }}>
+        Logs
       </button>
 
       <NewStudentButton addNewStudent={addNewStudent} />
       <NewDateButton addNewDate={addNewDate} />
     </div>
 
-  </div>
+  </div>;
 }
