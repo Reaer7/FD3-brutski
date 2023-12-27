@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 import './App.css';
-import DateCells from "./components/DateCells";
-import NewDateButton from "./components/NewDateButton";
-import NewStudentButton from "./components/NewStudentButton";
-import SavedButton from "./components/SavedButton";
-import StudentCells from "./components/StudentCells";
+import { DateCells } from "./components/DateCells";
+import { NewDateButton } from "./components/NewDateButton";
+import { NewStudentButton } from "./components/NewStudentButton";
+import { SavedButton } from "./components/SavedButton";
+import { StudentCells } from "./components/StudentCells";
 
 const INITIAL_STUDENT_NAMES = ["Samuel", "Noah", "Daniel"];
 const INITIAL_DATES = ["2023-12-09", "2023-12-16", "2023-12-23"];
 const STUDENT_ATTENDANCES_KEY = "studentAttendances";
 const DATES_KEY = "dates";
 
-export default function App() {
+export function App() {
   const [studentNames, setStudentNames] = useState(INITIAL_STUDENT_NAMES);
   const [dates, setDates] = useState(
       JSON.parse(localStorage.getItem(DATES_KEY))

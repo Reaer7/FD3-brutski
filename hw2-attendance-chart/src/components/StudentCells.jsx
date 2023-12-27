@@ -1,25 +1,16 @@
 import { v4 as uuidv4 } from "uuid";
-import AttendanceCell from "./AttendanceCell";
+import { AttendanceCell } from "./AttendanceCell";
 
-export default function StudentCells({ studentAttendances, setStudentAttendances }) {
+export function StudentCells({ studentAttendances, setStudentAttendances }) {
 
 	function changeAttendance(studentIndex, attendanceIndex) {
 		return () => {
 			const currentStudentAttendances = studentAttendances[studentIndex].attendance;
-			console.log("currentStudentAttendances", currentStudentAttendances);
-
 			const currentStudentAttendance = currentStudentAttendances[attendanceIndex];
-			const newStudentAttendance = !currentStudentAttendance;
-
-			const newStudentAttendances = [...currentStudentAttendances];
-			newStudentAttendances[attendanceIndex] = newStudentAttendance;
 
 			const changedStudentAttendances = [...studentAttendances];
-
-			changedStudentAttendances[studentIndex].attendance = newStudentAttendances;
-			// setStudentAttendances(changedStudentAttendances);
-
-			console.log("changedStudentAttendances", changedStudentAttendances[studentIndex].attendance);
+			changedStudentAttendances[studentIndex].attendance[attendanceIndex] = !currentStudentAttendance;
+			setStudentAttendances(changedStudentAttendances);
 		}
 	}
 

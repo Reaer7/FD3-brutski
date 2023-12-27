@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from "uuid";
-import FirstHeaderCell from "./FirstHeaderCell";
+import { FirstHeaderCell } from "./FirstHeaderCell";
 
-export default function DateCells({ dates }) {
+export function DateCells({ dates }) {
 	return <div className="row">
 		<FirstHeaderCell />
 		{

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const LOADING_TIME_MS = 2000;
 
-export default function SavedButton({ data }) {
+export function SavedButton({ data }) {
 	const [isClicked, setIsClick] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const [isDisabled, setIsDisabled] = useState(false);
@@ -23,8 +23,6 @@ export default function SavedButton({ data }) {
 				setIsLoading(!isLoading);
 				setIsDisabled(false);
 				setText("Save");
-
-				console.log("data", data);
 			}, LOADING_TIME_MS);
 		}
 	}, [isClicked]);

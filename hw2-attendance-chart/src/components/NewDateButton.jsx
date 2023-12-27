@@ -1,4 +1,4 @@
-export default function NewDateButton(props) {
+export function NewDateButton(props) {
 	return <button
 		className="wideButton"
 		onClick={() => props.addNewDate(prompt("Enter new date"))}
