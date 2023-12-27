@@ -19,6 +19,7 @@ export default function SavedButton({ data }) {
 					keyValue.key,
 					JSON.stringify(keyValue?.value)
 				));
+				setIsClick(!isClicked);
 				setIsLoading(!isLoading);
 				setIsDisabled(false);
 				setText("Save");
