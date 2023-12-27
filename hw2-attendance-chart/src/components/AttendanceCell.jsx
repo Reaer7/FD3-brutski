@@ -4,12 +4,12 @@ import { v4 as uuidv4 } from "uuid";
 const EMPTY_STRING = "";
 const PRESENTED_KEY = "X";
 
-export default function AttendanceCell({ changeAttendance }) {
+export default function AttendanceCell({ attendance, changeAttendance }) {
 	const [isClicked, setIsClick] = useState(false);
 	const [text, setText] = useState(EMPTY_STRING);
 
 	useEffect(() => {
-		if (isClicked) {
+		if (isClicked || attendance) {
 			setText(PRESENTED_KEY);
 		} else {
 			setText(EMPTY_STRING);

@@ -1,14 +1,7 @@
-import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import AttendanceCell from "./AttendanceCell";
 
-export default function StudentCells({ studentNames, dateLength }) {
-	const initStudentAttendances = studentNames.map(studentName => ({
-		studentName: studentName,
-		attendance: Array(dateLength).fill(false)
-	}));
-
-	const [studentAttendances, setStudentAttendances] = useState(initStudentAttendances);
+export default function StudentCells({ studentAttendances, setStudentAttendances }) {
 
 	function changeAttendance(studentIndex, attendanceIndex) {
 		return () => {
@@ -36,8 +29,9 @@ export default function StudentCells({ studentNames, dateLength }) {
 				{studentIndex + 1}.{studentAttendance.studentName}
 			</div>
 			{
-				studentAttendance.attendance?.map((_attendance, attendanceIndex) => <AttendanceCell
+				studentAttendance.attendance?.map((attendance, attendanceIndex) => <AttendanceCell
 					key={uuidv4()}
+					attendance={attendance}
 					changeAttendance={changeAttendance(studentIndex, attendanceIndex)}
 				/>)
 			}
