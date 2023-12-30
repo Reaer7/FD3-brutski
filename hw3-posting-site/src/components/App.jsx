@@ -5,6 +5,7 @@ import { Content } from "./layout/Content";
 import { Footer } from "./layout/Footer";
 import { Header } from "./layout/Header";
 import { AboutPage } from "./pages/AboutPage";
+import { ErrorPage } from "./pages/ErrorPage";
 import { PostPage } from "./pages/PostPage";
 import { StartPage } from "./pages/StartPage";
 import { TermsPage } from "./pages/TermsPage";
@@ -15,6 +16,7 @@ export function App() {
 			<Header />
 			<Content>
 				<Routes>
+					<Route path="*" element={<ErrorPage />} />
 					<Route id="root" path="/" element={<Navigate to="/start" />} />
 					<Route path="/start" element={<StartPage />} />
 					<Route path="/about" element={<AboutPage />} />
