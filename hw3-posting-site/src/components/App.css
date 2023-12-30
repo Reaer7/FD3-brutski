@@ -1,0 +1,97 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 10vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    background-color: #dbe86a;
+    min-height: calc(100vh - 10vmin);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    background-color: #aff159;
+    top: 0;
+}
+
+.header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.header, .footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    min-height: 50px;
+    height: max-content;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    padding: 10px 0;
+}
+
+.footer {
+    bottom: 0;
+    background-color: #35cae5;
+}
+
+.terms {
+    text-align: left;
+}
+
+/* PostPage */
+.post-card {
+    background-color: dimgray;
+    padding: 16px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+.post-card__title {
+    text-decoration: none;
+    color: blueviolet;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+}
+.post-card__body {}
+.post-link {}
+
+.spinner {
+    height: 10vmin;
+    pointer-events: none;
+}
