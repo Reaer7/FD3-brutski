@@ -67,3 +67,35 @@
   min-height: calc(100vh - 10vmin);
   min-width: 100%;
 }
+
+.timer-config {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.timer-config button {
+  border: 1px black solid;
+  font-size: 20px;
+  height: 50px;
+  width: 150px;
+}
+
+.timer-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
