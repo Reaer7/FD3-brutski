@@ -4,10 +4,13 @@
 Name: i-shop
 
 ### hw2
-Name: attendance-chart
+Name: attendance chart
 
 ### hw3
-Name: posting-site
+Name: posting site
+
+### hw4
+Name: mouse and timers
 
 ### Versions
 * npm - 10.2.3
