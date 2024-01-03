@@ -20,24 +20,37 @@ export function TimersPage() {
 		const timer1Id = setInterval(() => {
 			setNum1(num1 + STEP_NUMBER);
 		}, timer1Interval);
+
+		setTimer1Id(timer1Id);
+
+		return () => {
+			clearInterval(timer1Id);
+		};
+	}, [num1]);
+
+	useEffect(() => {
 		const timer2Id = setInterval(() => {
 			setNum2(num2 + STEP_NUMBER);
 		}, timer2Interval);
+
+		setTimer2Id(timer2Id);
+
+		return () => {
+			clearInterval(timer2Id);
+		};
+	}, [num2]);
+
+	useEffect(() => {
 		const timer3Id = setInterval(() => {
 			setNum3(num3 + STEP_NUMBER);
 		}, timer3Interval);
 
-		setTimer1Id(timer1Id);
-		setTimer2Id(timer2Id);
 		setTimer3Id(timer3Id);
 
-		// unmount - callback function
 		return () => {
-			clearInterval(timer1Id);
-			clearInterval(timer2Id);
 			clearInterval(timer3Id);
 		};
-	}, [num1, num2, num3]);
+	}, [num3]);
 
 	function slowerButtonHandler() {
 		setTimer1Interval(timer1Interval * 2);
