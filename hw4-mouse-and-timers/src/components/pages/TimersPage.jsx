@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import '../App.css';
+import { Stopwatch } from "../common/Stopwatch";
 
 const INITIAL_TIMER_INTERVAL_MS = 1000;
 const INITIAL_NUMBER = 0;
@@ -73,18 +74,9 @@ export function TimersPage(props) {
 			<button onClick={resetButtonHandler}>Reset</button>
 		</div>
 		<div className="timer-display">
-			<div className="timer">
-				<div>Timer 1</div>
-				<div>{num1}</div>
-			</div>
-			<div className="timer">
-				<div>Timer 2</div>
-				<div>{props.num2}</div>
-			</div>
-			<div className="timer">
-				<div>Timer 3</div>
-				<div>{props.num3}</div>
-			</div>
+			<Stopwatch name="Timer 1" num={num1} />
+			<Stopwatch name="Timer 2" num={props.num2} />
+			<Stopwatch name="Timer 3" num={props.num3} />
 		</div>
 	</>
 }
