@@ -1,9 +1,9 @@
 import '../App.css';
 import { Spinner } from "../common/Spinner";
 
-export function StartPage() {
+export function HomePage() {
 	return <>
-		<h3>This is Start Page!</h3>
+		<h3>This is Home Page!</h3>
 		<div>Use header link</div>
 		<Spinner />
 	</>

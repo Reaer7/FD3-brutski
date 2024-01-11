@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
 export function Header() {
-    return <header className="header">
-        <nav>
-            <Link to='/mouse'>Mouse</Link>
-            <Link to='/timers'>Timers</Link>
-        </nav>
-    </header>;
+	return <header className="header">
+		<nav>
+			<Link to='/'>Home</Link>
+			<Link to='/albums'>Albums</Link>
+			<Link to='/users'>Users</Link>
+			<Link to='/randomPhoto'>RandomPhoto</Link>
+		</nav>
+	</header>;
 }

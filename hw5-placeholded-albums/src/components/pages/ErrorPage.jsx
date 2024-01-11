@@ -5,6 +5,6 @@ export function ErrorPage() {
     return <div key={uuidv4()} id="error-page">
         <h1>Oops!</h1>
         <p>Page not found</p>
-        <Link to='/start'>Go to Home</Link>
+        <Link to='/'>Go to Home</Link>
     </div>
 }
