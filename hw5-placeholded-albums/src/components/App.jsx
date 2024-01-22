@@ -17,7 +17,7 @@ export function App() {
 			<Header />
 			<Content>
 				<Routes>
-					<Route path="*" element={<ErrorPage />} />
+					<Route path="*" element={<ErrorPage message="Page not found!" />} />
 					<Route id="root" path="/" element={<HomePage />} />
 					<Route path="/albums" element={<AlbumsPage />} />
 					<Route path="/albums/:id" element={<OneAlbumPage />} />
