@@ -1,3 +1,4 @@
+import { Navigate } from "react-router";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
 import { Content } from "./layout/Content";
@@ -17,7 +18,13 @@ export function App() {
 			<Header />
 			<Content>
 				<Routes>
-					<Route path="*" element={<ErrorPage message="Page not found!" />} />
+					<Route path="*" element={
+						<Navigate to="/error"
+								  state={{ message: 'Page not found!' }}
+								  replace={true}
+						/>}
+					/>
+					<Route path="/error" element={<ErrorPage />} />
 					<Route id="root" path="/" element={<HomePage />} />
 					<Route path="/albums" element={<AlbumsPage />} />
 					<Route path="/albums/:id" element={<OneAlbumPage />} />
