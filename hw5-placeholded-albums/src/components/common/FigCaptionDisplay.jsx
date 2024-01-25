@@ -21,7 +21,7 @@ export function FigCaptionDisplay(album) {
             : <div>
                 from
                 &#8195; {/*длинный пробел*/}
-                <Link to={`/album/${album.id}`}>{album.title}</Link>
+                <Link to={`/albums/${album.id}`}>{album.title}</Link>
                 &#8195;
                 by
                 &#8195;

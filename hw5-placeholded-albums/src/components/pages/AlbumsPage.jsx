@@ -1,21 +1,21 @@
 import { loadAlbums } from "../../api/jsonplaceholder";
 import { useLoad } from "../../hooks/useLoad";
 import { Spinner } from "../common/Spinner";
-import { LittleCard } from "../common/LittleCard";
+import { AlbumWithPhotoAndTitle } from "../common/AlbumWithPhotoAndTitle";
 
 export function AlbumsPage() {
-	const { data, isLoading } = useLoad(loadAlbums);
+    const { data: albums, isLoading } = useLoad(loadAlbums, true);
 
-	return <>
-		<h3>This is Albums Page!</h3>
-		{isLoading
-			? <Spinner />
-			: <div className="list">
-				{data.map(album => <LittleCard
-					key={album.id}
-					{...album}
-				/>)}
-			</div>
-		}
-	</>
+    return <>
+        <h3>Albums</h3>
+        {isLoading
+            ? <Spinner/>
+            : <div className="list">
+                {albums.map(album => <AlbumWithPhotoAndTitle
+                    key={album.id + album.title}
+                    album={album}
+                />)}
+            </div>
+        }
+    </>
 }

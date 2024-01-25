@@ -2,10 +2,12 @@ import { useLoad } from "../../hooks/useLoad";
 import { Spinner } from "./Spinner";
 import { loadUser } from "../../api/jsonplaceholder";
 
+const INIT_NUMBER = 0;
+
 export function UserInfo({ userId }) {
     const { data: user, isLoading } = useLoad(
         () => loadUser(userId),
-        !!userId
+        userId !== INIT_NUMBER
     );
 
     return <>

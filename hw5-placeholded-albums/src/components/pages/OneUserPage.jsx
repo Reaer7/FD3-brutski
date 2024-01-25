@@ -9,10 +9,10 @@ export function OneUserPage() {
 
 	return <>
 		<div>
-			<Link className="icon" onClick={() => navigate(-1)}>
+			<Link className="icon" to="/users">
 				&#8656; {/*двойная стрелка влево*/}
 			</Link>
-			<span className="header-text-36">This is one User Page!</span>
+			<span className="header-text-36">User Profile</span>
 		</div>
 		<UserInfo userId={userId} />
 		<SameAlbums userId={userId}/>

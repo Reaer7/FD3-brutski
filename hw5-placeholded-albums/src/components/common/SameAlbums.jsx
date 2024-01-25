@@ -1,12 +1,14 @@
 import { useLoad } from "../../hooks/useLoad";
 import { Spinner } from "./Spinner";
 import { loadAlbums } from "../../api/jsonplaceholder";
-import { LittleCard } from "./LittleCard";
+import { AlbumWithPhotoAndTitle } from "./AlbumWithPhotoAndTitle";
 
-export function SameAlbums(userId) {
+const INIT_NUMBER = 0;
+
+export function SameAlbums({ userId }) {
 	const { data: albums, isLoading } = useLoad(
 		() => loadAlbums(userId),
-		!!userId
+		userId !== INIT_NUMBER
 	);
 
 	return <>
@@ -14,9 +16,9 @@ export function SameAlbums(userId) {
 		{isLoading
 			? <Spinner />
 			: <div key="same photos" className="same-table">
-				{albums.map(oneAlbum => <LittleCard key={oneAlbum.url}
-											  thumbnailUrl={oneAlbum.thumbnailUrl}
-											  title={oneAlbum.title}
+				{albums.map(album => <AlbumWithPhotoAndTitle
+					key={album.id + album.title}
+					album={album}
 				/>)}
 			</div>
 		}

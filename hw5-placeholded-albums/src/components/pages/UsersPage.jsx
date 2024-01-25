@@ -7,7 +7,7 @@ export function UsersPage() {
     const { data, isLoading } = useLoad(loadUsers, true);
 
     return <>
-        <h3>This is Users Page!</h3>
+        <h3>Users</h3>
         {isLoading
             ? <Spinner />
             : <div className="rows left">

@@ -19,7 +19,7 @@ export function PhotoDisplay(photo) {
 		<h4>{photo.title}</h4>
 		{isLoading
 			? <Spinner/>
-			: <div>
+			: <div className="left">
 				<img className="big-photo"
 					 src={photo.url}
 					 alt="random big photo"

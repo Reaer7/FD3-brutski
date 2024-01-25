@@ -17,18 +17,19 @@ export function RandomPhotoPage() {
         setRandPhotoId(getRandInt(MIN_PHOTO_ID, MAX_PHOTO_ID));
     }, []);
 
-    const { data, isLoading } = useLoad(
+    const { data: photo, isLoading } = useLoad(
         () => loadPhoto(randPhotoId),
         randPhotoId !== INIT_NUMBER
     );
 
     return <>
-        <h3>This is random Photo Page!</h3>
+        <h3>Random Photo</h3>
         {isLoading
             ? <Spinner/>
             : <div>
-                <PhotoDisplay {...data} />
-                <SameAlbumPhotos {...data} />
+                <PhotoDisplay {...photo} />
+                <h4>Other from same album:</h4>
+                <SameAlbumPhotos albumId={photo.albumId} />
             </div>
         }
     </>
