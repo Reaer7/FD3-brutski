@@ -1,7 +1,7 @@
 import { loadAlbums } from "../../api/jsonplaceholder";
 import { useLoad } from "../../hooks/useLoad";
 import { Spinner } from "../common/Spinner";
-import { AlbumCard } from "../common/AlbumCard";
+import { LittleCard } from "../common/LittleCard";
 
 export function AlbumsPage() {
 	const { data, isLoading } = useLoad(loadAlbums);
@@ -11,7 +11,7 @@ export function AlbumsPage() {
 		{isLoading
 			? <Spinner />
 			: <div className="list">
-				{data.map(album => <AlbumCard
+				{data.map(album => <LittleCard
 					key={album.id}
 					{...album}
 				/>)}

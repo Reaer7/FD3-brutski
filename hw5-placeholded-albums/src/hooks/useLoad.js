@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 
-export function useLoad(loadCallback) {
+export function useLoad(loadCallback, isCondition) {
 	const [isLoading, setIsLoading] = useState(false);
 	const [data, setData] = useState([]);
 	const navigate = useNavigate();
@@ -19,8 +19,10 @@ export function useLoad(loadCallback) {
 	}
 
 	useEffect(() => {
-		loadAndSet();
-	}, []);
+		if (isCondition) {
+			loadAndSet();
+		}
+	}, [isCondition]);
 
 	return {
 		data,

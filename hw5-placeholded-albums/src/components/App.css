@@ -19,11 +19,13 @@
 
 .content {
     background-color: #dbe86a;
-    min-height: calc(100vh - 10vmin);
+    min-height: calc(100vh - 5vmin);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-left: 75px;
+    padding-right: 75px;
 }
 
 .header {
@@ -65,12 +67,10 @@
 .little-photo {
     width: 300px;
     height: 300px;
-    background-color: #282c3433;
-    gap: 16px;
 }
-.card {
-    background-color: #14171722;
-    gap: 16px;
+.big-photo {
+    width: 500px;
+    height: 500px;
 }
 
 .list {
@@ -82,23 +82,52 @@
      display: inline-list-item;
      gap: 10px;
  }
-.card {
-    background-color: dimgray;
-    padding: 16px;
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
-}
-.card__title {
-    text-decoration: none;
-    color: goldenrod;
-    margin-bottom: 16px;
-    text-transform: capitalize;
-}
-.card__body {}
-.link {}
 .line {
     text-decoration: none;
     color: blue;
     margin-bottom: 16px;
+}
+
+.same-table {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.same-card {
+    width: 200px;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.text {
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+}
+
+.padding-bottom-16 {
+    padding-bottom: 16px;
+}.padding-bottom-10 {
+    padding-bottom: 10px;
+}
+
+.icon {
+    text-decoration: none;
+    font-size: 72px;
+}
+
+.header-text-36 {
+    font-size: 36px;
+    font-weight: bold;
+}
+.header-text-28 {
+    font-size: 28px;
+    font-weight: bold;
 }
